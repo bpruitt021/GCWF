@@ -1,0 +1,7 @@
+# Redirect all requests to index.html for SPA-like behavior
+/*    /index.html   200
+
+# Optional: fix common broken links
+/sermon    /sermons.html   301
+/event     /events.html    301
+/blogs     /blog.html      301
