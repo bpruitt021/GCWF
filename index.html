@@ -13,68 +13,18 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="sermons.html">Sermons</a>
     <a href="events.html">Events</a>
     <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="container">
-    <section>
-      <h2>Welcome</h2>
-      <p>We are a fellowship of believers dedicated to worship, teaching, outreach, and walking faithfully with Christ.</p>
-    </section>
-
-    <section>
-      <h2>Latest Sermons</h2>
-      <div id="sermons-preview"></div>
-    </section>
-
-    <section>
-      <h2>Upcoming Events</h2>
-      <div id="events-preview"></div>
-    </section>
-
-    <section>
-      <h2>Latest Blog Posts</h2>
-      <div id="blog-preview"></div>
-    </section>
-  </div>
+  <main class="container">
+    <h2>Welcome</h2>
+    <p>We are a fellowship of believers dedicated to worship, teaching, outreach, and walking faithfully with Christ.</p>
+  </main>
 
   <footer>
     <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
-    <p>Sunday Service: 10:00 AM | 123 Church Street, Florida</p>
   </footer>
-
-  <script>
-    async function loadJSON(file, targetId, type, limit = 3) {
-      try {
-        const res = await fetch(file);
-        const data = await res.json();
-        const container = document.getElementById(targetId);
-        container.innerHTML = "";
-
-        data.slice(0, limit).forEach(item => {
-          const card = document.createElement("div");
-          card.classList.add("card");
-          if(type === "sermon") {
-            card.innerHTML = `<h3>${item.title}</h3><p><strong>Speaker:</strong> ${item.speaker}</p><p><strong>Date:</strong> ${item.date}</p><small>${item.description}</small>`;
-          } else if(type === "event") {
-            card.innerHTML = `<h3>${item.title}</h3><p><strong>Date:</strong> ${item.date}</p><p><strong>Location:</strong> ${item.location}</p><small>${item.description}</small>`;
-          } else if(type === "blog") {
-            card.innerHTML = `<h3>${item.title}</h3><p><strong>Author:</strong> ${item.author}</p><p><strong>Date:</strong> ${item.date}</p><small>${item.excerpt}</small>`;
-          }
-          container.appendChild(card);
-        });
-      } catch(err) {
-        console.error("Error loading", file, err);
-      }
-    }
-
-    loadJSON("content/sermons.json", "sermons-preview", "sermon");
-    loadJSON("content/events.json", "events-preview", "event");
-    loadJSON("content/blog.json", "blog-preview", "blog");
-  </script>
 </body>
 </html>
