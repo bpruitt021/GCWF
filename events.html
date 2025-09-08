@@ -3,33 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | God's Cloud of Witnesses Fellowship</title>
+  <title>Events | GCWF</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>God's Cloud of Witnesses Fellowship</h1>
+    <h1>Events</h1>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
     <a href="sermons.html">Sermons</a>
     <a href="events.html">Events</a>
     <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="container">
-    <section>
-      <h2>Upcoming Events</h2>
-      <div id="events"></div>
-    </section>
-  </div>
+  <main class="container">
+    <h2>Upcoming Events</h2>
+    <div id="events"></div>
+  </main>
 
   <footer>
     <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
-    <p>Sunday Service: 10:00 AM | 123 Church Street, Florida</p>
   </footer>
 
   <script>
@@ -40,17 +35,23 @@
         const container = document.getElementById("events");
         container.innerHTML = "";
 
-        data.forEach(item => {
+        data.forEach(event => {
           const card = document.createElement("div");
           card.classList.add("card");
-          card.innerHTML = `<h3>${item.title}</h3><p><strong>Date:</strong> ${item.date}</p><p><strong>Location:</strong> ${item.location}</p><small>${item.description}</small>`;
+          card.innerHTML = `
+            <h3>${event.title}</h3>
+            <p><strong>Date:</strong> ${event.date}</p>
+            <p><strong>Location:</strong> ${event.location}</p>
+            <small>${event.description}</small>
+          `;
           container.appendChild(card);
         });
-      } catch(err) {
-        console.error(err);
+      } catch (err) {
+        document.getElementById("events").innerHTML = "<p>Error loading events.</p>";
       }
     }
     loadEvents();
   </script>
 </body>
 </html>
+
