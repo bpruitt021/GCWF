@@ -4,196 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>God's Cloud of Witnesses Fellowship</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Georgia", serif;
-      background-color: #fdfaf5; /* cream */
-      color: #2c2c2c;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #4a1f1f; /* burgundy */
-      color: #f9f3e6;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #3a0d0d;
-      padding: 12px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #f9f3e6;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: "Trebuchet MS", sans-serif;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #d4af37; /* gold */
-    }
-
-    .container {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    section h2 {
-      font-family: "Georgia", serif;
-      color: #4a1f1f;
-      border-bottom: 2px solid #d4af37;
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding-bottom: 0.25rem;
-    }
-
-    /* Cards */
-    .card {
-      background: #fff;
-      border: 1px solid #e6d9c6;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #4a1f1f;
-    }
-
-    .card p {
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    .card small {
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      background-color: #4a1f1f;
-      color: #f9f3e6;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>God's Cloud of Witnesses Fellowship</h1>
   </header>
 
-  <!-- Navigation -->
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-  <a href="sermons.html">Sermons</a>
-    <a href="#">Events</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="sermons.html">Sermons</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Main Content -->
   <div class="container">
-    <!-- Welcome -->
     <section>
       <h2>Welcome</h2>
       <p>We are a fellowship of believers dedicated to worship, teaching, outreach, and walking faithfully with Christ.</p>
     </section>
 
-    <!-- Sermons -->
-   <h2>Latest Sermons</h2>
-<div id="sermons"></div>
-</section>
-
-    <!-- Events -->
     <section>
-      <h2>Upcoming Events</h2>
-      <div id="events"></div>
+      <h2>Latest Sermons</h2>
+      <div id="sermons-preview"></div>
     </section>
 
-    <!-- Blog -->
+    <section>
+      <h2>Upcoming Events</h2>
+      <div id="events-preview"></div>
+    </section>
+
     <section>
       <h2>Latest Blog Posts</h2>
-      <div id="blog"></div>
+      <div id="blog-preview"></div>
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
     <p>Sunday Service: 10:00 AM | 123 Church Street, Florida</p>
   </footer>
 
-  <!-- JavaScript Loader -->
   <script>
-    // Helper: load JSON
-    async function loadJSON(file, targetId, type) {
+    async function loadJSON(file, targetId, type, limit = 3) {
       try {
         const res = await fetch(file);
         const data = await res.json();
         const container = document.getElementById(targetId);
         container.innerHTML = "";
 
-        data.forEach(item => {
+        data.slice(0, limit).forEach(item => {
           const card = document.createElement("div");
           card.classList.add("card");
-
-          if (type === "sermon") {
-            card.innerHTML = `
-              <h3>${item.title}</h3>
-              <p><strong>Speaker:</strong> ${item.speaker}</p>
-              <p><strong>Date:</strong> ${item.date}</p>
-              <small>${item.description}</small>
-            `;
-          } else if (type === "event") {
-            card.innerHTML = `
-              <h3>${item.title}</h3>
-              <p><strong>Date:</strong> ${item.date}</p>
-              <p><strong>Location:</strong> ${item.location}</p>
-              <small>${item.description}</small>
-            `;
-          } else if (type === "blog") {
-            card.innerHTML = `
-              <h3>${item.title}</h3>
-              <p><strong>Author:</strong> ${item.author}</p>
-              <p><strong>Date:</strong> ${item.date}</p>
-              <small>${item.excerpt}</small>
-            `;
+          if(type === "sermon") {
+            card.innerHTML = `<h3>${item.title}</h3><p><strong>Speaker:</strong> ${item.speaker}</p><p><strong>Date:</strong> ${item.date}</p><small>${item.description}</small>`;
+          } else if(type === "event") {
+            card.innerHTML = `<h3>${item.title}</h3><p><strong>Date:</strong> ${item.date}</p><p><strong>Location:</strong> ${item.location}</p><small>${item.description}</small>`;
+          } else if(type === "blog") {
+            card.innerHTML = `<h3>${item.title}</h3><p><strong>Author:</strong> ${item.author}</p><p><strong>Date:</strong> ${item.date}</p><small>${item.excerpt}</small>`;
           }
-
           container.appendChild(card);
         });
-      } catch (err) {
+      } catch(err) {
         console.error("Error loading", file, err);
       }
     }
 
-    // Load data
-    loadJSON("content/sermons.json", "sermons", "sermon");
-    loadJSON("content/events.json", "events", "event");
-    loadJSON("content/blog.json", "blog", "blog");
+    loadJSON("content/sermons.json", "sermons-preview", "sermon");
+    loadJSON("content/events.json", "events-preview", "event");
+    loadJSON("content/blog.json", "blog-preview", "blog");
   </script>
 </body>
 </html>
