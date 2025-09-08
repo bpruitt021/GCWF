@@ -1,20 +1,20 @@
 [
   {
-    "title": "Faith in Everyday Life",
+    "title": "Faith in Daily Life",
     "author": "Pastor John Smith",
+    "date": "2025-09-05",
+    "excerpt": "Exploring practical ways to integrate faith into your everyday routines."
+  },
+  {
+    "title": "Understanding Grace",
+    "author": "Pastor Mary Johnson",
     "date": "2025-08-30",
-    "excerpt": "Practical ways to walk in faith daily and trust God in small decisions."
+    "excerpt": "A reflection on God's grace and how it impacts our relationships and choices."
   },
   {
     "title": "The Power of Community",
-    "author": "Elder Mary Johnson",
-    "date": "2025-08-20",
-    "excerpt": "Discover how fellowship strengthens our walk with Christ and encourages others."
-  },
-  {
-    "title": "Prayer That Changes Things",
-    "author": "Pastor John Smith",
-    "date": "2025-08-10",
-    "excerpt": "Tips on deepening your prayer life and seeing God’s hand at work."
+    "author": "Pastor David Lee",
+    "date": "2025-08-22",
+    "excerpt": "Why gathering together as a church strengthens our faith and support for one another."
   }
 ]
