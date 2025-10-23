@@ -1,14 +1,17 @@
 [
   {
     "title": "Walking by Faith",
-    "speaker": "Pastor John Smith",
-    "date": "2025-09-01",
-    "description": "An encouraging message on trusting God in uncertain times, based on Hebrews 11."
+    "speaker": "Pastor John Doe",
+    "date": "2025-09-28",
+    "description": "A short reflection on Hebrews 11...",
+    "link": "sermons/walking-by-faith.html"
   },
   {
-    "title": "Love Thy Neighbor",
-    "speaker": "Pastor David Lee",
-    "date": "2025-08-18",
-    "description": "A sermon on compassion, service, and living Christ's love for others."
+    "title": "The Power of Prayer",
+    "speaker": "Pastor Jane Smith",
+    "date": "2025-09-21",
+    "description": "Discover how prayer strengthens believers...",
+    "link": "sermons/power-of-prayer.html"
   }
 ]
+
