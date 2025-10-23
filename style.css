@@ -1,68 +1,144 @@
-body {
-  font-family: "Georgia", serif;
-  background-color: #fdfaf5;
-  color: #2c2c2c;
-  line-height: 1.6;
-  margin: 0;
-}
-header {
-  background-color: #4a1f1f;
-  color: #f9f3e6;
-  padding: 20px;
-  text-align: center;
-}
-nav {
-  background-color: #3a0d0d;
-  padding: 12px;
-  text-align: center;
-}
-nav a {
-  color: #f9f3e6;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover { color: #d4af37; }
-.container {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
-h2 {
-  border-bottom: 2px solid #d4af37;
-  color: #4a1f1f;
-  display: inline-block;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-}
-.card {
-  background: #fff;
-  border: 1px solid #e6d9c6;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-footer {
-  background-color: #4a1f1f;
-  color: #f9f3e6;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background-color: #4a1f1f;
-  color: #f9f3e6;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
+/* style.css — Modern Clean Worship theme */
+:root{
+  --bg: #ffffff;
+  --muted: #f6f7fb;
+  --text: #22292f;
+  --accent: #0b3d91; /* deep blue */
+  --gold: #d4af37;
+  --card-border: #e6eefb;
+  --radius: 10px;
+  --maxw: 1100px;
 }
 
-.btn:hover {
-  background-color: #d4af37;
-  color: #4a1f1f;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--muted);
+  color: var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header / Nav */
+.header {
+  background: linear-gradient(90deg,var(--accent), #072a6a);
+  color: #fff;
+  padding: 28px 16px;
+  text-align: center;
+}
+.header h1{font-weight:700;letter-spacing:0.5px;font-size:1.6rem;margin-bottom:6px}
+.header p{opacity:0.95;margin-top:4px;font-size:0.95rem}
+
+/* Nav bar */
+.nav {
+  background: #fff;
+  border-bottom:1px solid #e8eef8;
+  display:flex;
+  justify-content:center;
+  padding:12px 8px;
+  gap:18px;
+}
+.nav a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 12px;
+  border-radius:8px;
+}
+.nav a:hover{background:#f0f5ff}
+.nav a.active{background:linear-gradient(90deg,var(--gold), #d1a93a); color:#0b1b2b}
+
+/* Layout */
+.container{
+  max-width:var(--maxw);
+  margin:28px auto;
+  padding: 0 18px;
+}
+
+/* Section heading */
+.section-title{
+  display:inline-block;
+  font-weight:700;
+  color:var(--accent);
+  border-bottom:3px solid var(--gold);
+  padding-bottom:6px;
+  margin-bottom:14px;
+  font-size:1.2rem;
+}
+
+/* Card */
+.card{
+  background:var(--bg);
+  border:1px solid var(--card-border);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 6px 18px rgba(11,61,145,0.06);
+}
+.card h3{color:var(--accent);margin-bottom:8px}
+.card p{margin-bottom:8px;color:var(--text)}
+.card small{color:#6b7280}
+
+/* Grid helpers */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+
+/* Button */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:700;
+  transition:transform .12s ease, background .12s ease;
+}
+.btn:hover{transform:translateY(-2px); background:#072a6a}
+
+/* Secondary */
+.btn-ghost{
+  display:inline-block;
+  padding:8px 12px;
+  background:#fff;
+  color:var(--accent);
+  border:1px solid #dbe9ff;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* Footer */
+.footer{
+  background:#0b1830;
+  color:#dfe9ff;
+  padding:18px 12px;
+  text-align:center;
+  margin-top:28px;
+  font-size:0.95rem;
+}
+
+/* Form */
+form.card{display:block}
+form label{display:block;margin-top:10px;font-weight:600;color:#243047}
+form input, form textarea{
+  width:100%;
+  padding:10px 12px;
+  margin-top:8px;
+  border:1px solid #e6eef8;
+  border-radius:8px;
+  font-size:1rem;
+  background:#fff;
+}
+form button{border:none}
+
+/* Responsive tweaks */
+@media (max-width:640px){
+  .header h1{font-size:1.2rem}
+  .nav{padding:10px}
+  .container{padding:0 12px}
 }
