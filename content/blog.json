@@ -1,14 +1,9 @@
 [
   {
-    "title": "Faith in Daily Life",
-    "author": "Pastor John Smith",
-    "date": "2025-09-05",
-    "excerpt": "Exploring practical ways to integrate faith into your everyday routines."
-  },
-  {
-    "title": "The Power of Community",
-    "author": "Pastor David Lee",
-    "date": "2025-08-22",
-    "excerpt": "Why gathering together as a church strengthens our faith and support for one another."
+    "title": "Living with Grace",
+    "author": "Pastor Jane Smith",
+    "date": "2025-09-20",
+    "excerpt": "Grace transforms how we live every day...",
+    "link": "blog/living-with-grace.html"
   }
 ]
