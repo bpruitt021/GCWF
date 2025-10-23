@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | GCWF</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — GCWF</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Blog</h1>
-  </header>
-
-  <nav>
+  <header class="header"><h1>Blog</h1></header>
+  <nav class="nav">
     <a href="index.html">Home</a>
     <a href="sermons.html">Sermons</a>
     <a href="events.html">Events</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html" class="active">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <main class="container">
-    <h2>Latest Blog Posts</h2>
-    <div id="blog"></div>
+    <h2 class="section-title">Latest Blog Posts</h2>
+    <div id="blog-list" class="grid-3"></div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
-  </footer>
+  <footer class="footer">© 2025 GCWF</footer>
 
-  <script>
-    async function loadBlog() {
-      const res = await fetch("content/blog.json");
-      const data = await res.json();
-      const container = document.getElementById("blog");
-      container.innerHTML = "";
-      data.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-          <h3>${item.title}</h3>
-          <p><strong>Author:</strong> ${item.author}</p>
-          <p><strong>Date:</strong> ${item.date}</p>
-          <small>${item.excerpt}</small><br>
-          <a href="${item.link}" class="btn">Read More</a>
-        `;
-        container.appendChild(card);
-      });
-    }
-    loadBlog();
-  </script>
+<script>
+async function loadBlog(){
+  try{
+    const res = await fetch('content/blog.json');
+    const data = await res.json();
+    const container = document.getElementById('blog-list');
+    container.innerHTML = '';
+    data.forEach(item=>{
+      const card = document.createElement('div');
+      card.className='card';
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><strong>Author:</strong> ${item.author}</p>
+        <p><strong>Date:</strong> ${item.date}</p>
+        <small>${item.excerpt}</small>
+        <div style="margin-top:10px">
+          <a class="btn" href="${item.link}">Read More</a>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }catch(e){
+    document.getElementById('blog-list').innerHTML = '<p>Unable to load posts.</p>';
+    console.error(e);
+  }
+}
+loadBlog();
+</script>
 </body>
 </html>
