@@ -30,26 +30,22 @@
 
   <script>
     async function loadBlog() {
-      try {
-        const res = await fetch("content/blog.json");
-        const data = await res.json();
-        const container = document.getElementById("blog");
-        container.innerHTML = "";
-
-        data.forEach(post => {
-          const card = document.createElement("div");
-          card.classList.add("card");
-          card.innerHTML = `
-            <h3>${post.title}</h3>
-            <p><strong>Author:</strong> ${post.author}</p>
-            <p><strong>Date:</strong> ${post.date}</p>
-            <small>${post.excerpt}</small>
-          `;
-          container.appendChild(card);
-        });
-      } catch (err) {
-        document.getElementById("blog").innerHTML = "<p>Error loading blog posts.</p>";
-      }
+      const res = await fetch("content/blog.json");
+      const data = await res.json();
+      const container = document.getElementById("blog");
+      container.innerHTML = "";
+      data.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `
+          <h3>${item.title}</h3>
+          <p><strong>Author:</strong> ${item.author}</p>
+          <p><strong>Date:</strong> ${item.date}</p>
+          <small>${item.excerpt}</small><br>
+          <a href="${item.link}" class="btn">Read More</a>
+        `;
+        container.appendChild(card);
+      });
     }
     loadBlog();
   </script>
