@@ -1,7 +1,10 @@
-# Redirect all requests to index.html for SPA-like behavior
+# Route unknown pages to homepage (SPA fallback)
+# Netlify will serve index.html for unknown routes (200)
+# This helps prevent 404s for friendly URLs
 /*    /index.html   200
 
-# Optional: fix common broken links
+# Simple redirects and typo fixes
 /sermon    /sermons.html   301
-/event     /events.html    301
+/events-list  /events.html  301
 /blogs     /blog.html      301
+
