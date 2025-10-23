@@ -1,34 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>God's Cloud of Witnesses Fellowship</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <h1>God's Cloud of Witnesses Fellowship</h1>
+    <p>Worship • Teach • Serve — run the race with endurance (Hebrews 12:1)</p>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
+  <nav class="nav">
+    <a href="index.html" class="active">Home</a>
     <a href="sermons.html">Sermons</a>
     <a href="events.html">Events</a>
     <a href="blog.html">Blog</a>
-     <a href="contact.html">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <main class="container">
-    <h2>Welcome</h2>
-    <p>We are a fellowship of believers dedicated to worship, teaching, outreach, and walking faithfully with Christ.</p>
-    <p>Services are Sunday 12pm-2pm and Wednesday 7pm-8pm.</p>
-    <p>Food will be provided after each service.</p>
-    <p>We welcome you to come be a part of our family.</p>
+    <section>
+      <h2 class="section-title">Welcome</h2>
+      <div class="card">
+        <p>Welcome to God's Cloud of Witnesses Fellowship — a warm community committed to worship, discipleship, and outreach. Join us Sunday mornings at 12pm-2pm and Wednesday evenings at 7pm-8pm. Food served after each service.</p>
+        <div style="margin-top:12px">
+          <a class="btn" href="sermons.html">Latest Sermons</a>
+          <a class="btn-ghost" href="events.html" style="margin-left:8px">Upcoming Events</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2 class="section-title">Highlights</h2>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="card">
+          <h3>Latest Sermon</h3>
+          <p id="home-sermon">Loading…</p>
+          <a href="sermons.html" class="btn">See All Sermons</a>
+        </div>
+
+        <div class="card">
+          <h3>Next Event</h3>
+          <p id="home-event">Loading…</p>
+          <a href="events.html" class="btn">See Events</a>
+        </div>
+
+        <div class="card">
+          <h3>From the Blog</h3>
+          <p id="home-blog">Loading…</p>
+          <a href="blog.html" class="btn">Read Blog</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
+  <footer class="footer">
+    © 2025 God's Cloud of Witnesses Fellowship — Sunday Service 10:00 AM — 123 Church Street, Florida
   </footer>
+
+<script>
+async function fetchJSON(path){
+  try{
+    const r = await fetch(path);
+    if(!r.ok) throw new Error('Fetch failed');
+    return r.json();
+  }catch(e){
+    return null;
+  }
+}
+(async function(){
+  const s = await fetchJSON('content/sermons.json');
+  if(s && s.length) document.getElementById('home-sermon').innerText = `${s[0].title} — ${s[0].speaker}`;
+  else document.getElementById('home-sermon').innerText = 'No sermons yet';
+
+  const e = await fetchJSON('content/events.json');
+  if(e && e.length) document.getElementById('home-event').innerText = `${e[0].title} — ${e[0].date}`;
+  else document.getElementById('home-event').innerText = 'No upcoming events';
+
+  const b = await fetchJSON('content/blog.json');
+  if(b && b.length) document.getElementById('home-blog').innerText = `${b[0].title} — ${b[0].author}`;
+  else document.getElementById('home-blog').innerText = 'No posts yet';
+})();
+</script>
 </body>
 </html>
