@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sermons | GCWF</title>
+  <title>Sermons | God's Cloud of Witnesses Fellowship</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header><h1>Sermons</h1></header>
+  <header>
+    <h1>Sermons</h1>
+  </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="sermons.html">Sermons</a>
@@ -17,31 +20,43 @@
   </nav>
 
   <div class="container">
-    <h2>Latest Sermons</h2>
-    <div id="sermons"></div>
+    <section>
+      <h2>Latest Sermons</h2>
+      <div id="sermons"></div>
+    </section>
   </div>
 
-  <footer><p>&copy; 2025 GCWF</p></footer>
+  <footer>
+    <p>&copy; 2025 God's Cloud of Witnesses Fellowship</p>
+  </footer>
 
   <script>
     async function loadSermons() {
-      const res = await fetch("content/sermons.json");
-      const data = await res.json();
-      const container = document.getElementById("sermons");
-      container.innerHTML = "";
-      data.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        card.innerHTML = `
-          <h3>${item.title}</h3>
-          <p><strong>Speaker:</strong> ${item.speaker}</p>
-          <p><strong>Date:</strong> ${item.date}</p>
-          <small>${item.description}</small><br>
-          <a href="${item.link}" class="btn">Read More</a>
-        `;
-        container.appendChild(card);
-      });
+      try {
+        const res = await fetch("content/sermons.json");
+        const data = await res.json();
+        const container = document.getElementById("sermons");
+        container.innerHTML = "";
+
+        data.forEach(sermon => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          card.innerHTML = `
+            <h3>${sermon.title}</h3>
+            <p><strong>Speaker:</strong> ${sermon.speaker}</p>
+            <p><strong>Date:</strong> ${sermon.date}</p>
+            <small>${sermon.description}</small><br>
+            <a href="${sermon.link}" class="btn">Read More</a>
+          `;
+
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Error loading sermons:", err);
+      }
     }
+
     loadSermons();
   </script>
 </body>
