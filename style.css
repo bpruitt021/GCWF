@@ -3,7 +3,7 @@
   --bg: #ffffff;
   --muted: #f6f7fb;
   --text: #22292f;
-  --accent: #0b3d91; /* deep blue */
+  --accent: #4a1f1f; /* burgundy */
   --gold: #d4af37;
   --card-border: #e6eefb;
   --radius: 10px;
@@ -23,7 +23,7 @@ body{
 
 /* Header / Nav */
 .header {
-  background: linear-gradient(90deg,var(--accent), #072a6a);
+  background: linear-gradient(90deg,var(--accent), #2b0f0f);
   color: #fff;
   padding: 28px 16px;
   text-align: center;
@@ -47,8 +47,8 @@ body{
   padding:8px 12px;
   border-radius:8px;
 }
-.nav a:hover{background:#f0f5ff}
-.nav a.active{background:linear-gradient(90deg,var(--gold), #d1a93a); color:#0b1b2b}
+.nav a:hover{background:#fdf5f5}
+.nav a.active{background:linear-gradient(90deg,var(--gold), #d1a93a); color:#2b0f0f}
 
 /* Layout */
 .container{
@@ -75,7 +75,7 @@ body{
   border-radius:var(--radius);
   padding:18px;
   margin-bottom:18px;
-  box-shadow:0 6px 18px rgba(11,61,145,0.06);
+  box-shadow:0 6px 18px rgba(74,31,31,0.08);
 }
 .card h3{color:var(--accent);margin-bottom:8px}
 .card p{margin-bottom:8px;color:var(--text)}
@@ -99,7 +99,7 @@ body{
   font-weight:700;
   transition:transform .12s ease, background .12s ease;
 }
-.btn:hover{transform:translateY(-2px); background:#072a6a}
+.btn:hover{transform:translateY(-2px); background:#2b0f0f}
 
 /* Secondary */
 .btn-ghost{
@@ -107,15 +107,15 @@ body{
   padding:8px 12px;
   background:#fff;
   color:var(--accent);
-  border:1px solid #dbe9ff;
+  border:1px solid #f1e2e2;
   border-radius:8px;
   text-decoration:none;
 }
 
 /* Footer */
 .footer{
-  background:#0b1830;
-  color:#dfe9ff;
+  background:#2b0f0f;
+  color:#f8e9e9;
   padding:18px 12px;
   text-align:center;
   margin-top:28px;
@@ -124,7 +124,7 @@ body{
 
 /* Form */
 form.card{display:block}
-form label{display:block;margin-top:10px;font-weight:600;color:#243047}
+form label{display:block;margin-top:10px;font-weight:600;color:#4a1f1f}
 form input, form textarea{
   width:100%;
   padding:10px 12px;
