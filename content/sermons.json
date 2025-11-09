@@ -1,16 +1,20 @@
 [
   {
-    "title": "Walking by Faith",
-    "speaker": "Pastor John Doe",
-    "date": "2025-09-28",
-    "description": "A reflection on Hebrews 11 and trusting God's promises.",
-    "link": "sermons/walking-by-faith.html"
+    "title": "Walk by Faith",
+    "scripture": "Hebrews 11",
+    "speaker": "Pastor Robert Perkins",
+    "pdf": "sermons/walk-by-faith.pdf"
+  },
+  {
+    "title": "Living with Grace",
+    "scripture": "Titus 2:11",
+    "speaker": "Pastor Robert Perkins",
+    "pdf": "sermons/living-with-grace.pdf"
   },
   {
     "title": "The Power of Prayer",
-    "speaker": "Pastor Jane Smith",
-    "date": "2025-09-21",
-    "description": "Practical steps to deepen your prayer life.",
-    "link": "sermons/power-of-prayer.html"
+    "scripture": "James 5:16",
+    "speaker": "Pastor Robert Perkins",
+    "pdf": "sermons/power-of-prayer.pdf"
   }
 ]
