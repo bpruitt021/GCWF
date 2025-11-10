@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header"><h1>Events</h1></header>
+  <header class="header"><h1>Upcoming Events</h1></header>
+
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="sermons.html">Sermons</a>
@@ -17,38 +18,17 @@
   </nav>
 
   <main class="container">
-    <h2 class="section-title">Upcoming Events</h2>
-    <div id="events-list" class="grid-3"></div>
+    <div class="card">
+      <h3>Thanksgiving Fellowship Dinner</h3>
+      <p>Join us for food, faith, and fellowship as we give thanks together.</p>
+      <p><strong>Date:</strong> November 27, 2025 @ 1 PM</p>
+    </div>
   </main>
 
-  <footer class="footer">© 2025 GCWF</footer>
-
-<script>
-async function loadEvents(){
-  try{
-    const res = await fetch('content/events.json');
-    const data = await res.json();
-    const container = document.getElementById('events-list');
-    container.innerHTML = '';
-    data.forEach(item=>{
-      const card = document.createElement('div');
-      card.className='card';
-      card.innerHTML = `
-        <h3>${item.title}</h3>
-        <p><strong>Date:</strong> ${item.date}</p>
-        <p><strong>Location:</strong> ${item.location}</p>
-        <small>${item.description}</small>
-        <div style="margin-top:10px">
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }catch(e){
-    document.getElementById('events-list').innerHTML = '<p>Unable to load events.</p>';
-    console.error(e);
-  }
-}
-loadEvents();
-</script>
+  <footer class="footer">
+    © 2025 God’s Cloud of Witnesses Fellowship<br>
+    38301 Martin Luther King Blvd, Dade City, FL 33525<br>
+    Email: <a href="mailto:godscowfellowship@gmail.com">godscowfellowship@gmail.com</a>
+  </footer>
 </body>
 </html>
