@@ -1,12 +1,11 @@
-/* style.css — Cherry & Gold Worship Theme */
+/* style.css — Cherry & Gold Theme for GCWF */
 :root{
   --bg: #ffffff;
-  --muted: #faf7f7;
-  --text: #2a1f1f;
-  --accent: #8b0000; /* cherry red */
-  --accent-dark: #5a0000; /* darker cherry */
+  --muted: #f8f5f6;
+  --text: #2b1b1b;
+  --accent: #D2042D; /* cherry red */
   --gold: #d4af37;
-  --card-border: #f0e2e2;
+  --card-border: #f0e5e5;
   --radius: 10px;
   --maxw: 1100px;
 }
@@ -14,42 +13,27 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
-  font-family: "Georgia", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--muted);
   color: var(--text);
   line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Header / Nav */
+/* Header */
 .header {
-  background: linear-gradient(90deg,var(--accent), var(--accent-dark));
+  background: linear-gradient(90deg,var(--accent), #5a0000);
   color: #fff;
-  padding: 30px 16px;
+  padding: 28px 16px;
   text-align: center;
-  box-shadow: 0 3px 8px rgba(90,0,0,0.3);
 }
-.header h1{
-  font-weight:700;
-  letter-spacing:0.5px;
-  font-size:1.8rem;
-  margin-bottom:6px;
-}
-.header p{
-  opacity:0.95;
-  margin-top:4px;
-  font-size:1rem;
-  color: #f9e8e8;
-}
+.header h1{font-weight:700;letter-spacing:0.5px;font-size:1.6rem;margin-bottom:6px}
 
 /* Nav bar */
 .nav {
   background: #fff;
-  border-bottom:1px solid #f3e1e1;
+  border-bottom:1px solid #f1e3e3;
   display:flex;
   justify-content:center;
-  flex-wrap:wrap;
   padding:12px 8px;
   gap:18px;
 }
@@ -57,18 +41,11 @@ body{
   color:var(--accent);
   text-decoration:none;
   font-weight:600;
-  padding:8px 14px;
+  padding:8px 12px;
   border-radius:8px;
-  transition: background .2s ease, color .2s ease;
 }
-.nav a:hover{
-  background:#fff2f2;
-  color:var(--accent-dark);
-}
-.nav a.active{
-  background:linear-gradient(90deg,var(--gold), #b8941f);
-  color:#3b0101;
-}
+.nav a:hover{background:#fff3f3}
+.nav a.active{background:linear-gradient(90deg,var(--gold), #caa435); color:#2b1b1b}
 
 /* Layout */
 .container{
@@ -85,7 +62,7 @@ body{
   border-bottom:3px solid var(--gold);
   padding-bottom:6px;
   margin-bottom:14px;
-  font-size:1.3rem;
+  font-size:1.2rem;
 }
 
 /* Card */
@@ -93,22 +70,14 @@ body{
   background:var(--bg);
   border:1px solid var(--card-border);
   border-radius:var(--radius);
-  padding:20px;
-  margin-bottom:20px;
-  box-shadow:0 6px 18px rgba(139,0,0,0.08);
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 6px 18px rgba(128,0,0,0.08);
 }
-.card h3{color:var(--accent);margin-bottom:10px}
-.card p{margin-bottom:10px;color:var(--text)}
-.card small{color:#6b5a5a}
+.card h3{color:var(--accent);margin-bottom:8px}
+.card p{margin-bottom:8px;color:var(--text)}
 
-/* Grid helpers */
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-}
-
-/* Buttons */
+/* Button */
 .btn{
   display:inline-block;
   padding:10px 16px;
@@ -119,32 +88,34 @@ body{
   font-weight:700;
   transition:transform .12s ease, background .12s ease;
 }
-.btn:hover{
-  transform:translateY(-2px);
-  background:var(--accent-dark);
-}
-.btn-ghost{
-  display:inline-block;
-  padding:8px 12px;
-  background:#fff;
-  color:var(--accent);
-  border:1px solid #f5dcdc;
-  border-radius:8px;
-  text-decoration:none;
-}
+.btn:hover{transform:translateY(-2px); background:#5a0000}
 
 /* Footer */
 .footer{
-  background:var(--accent-dark);
-  color:#fbeee0;
-  padding:20px 12px;
+  background:#2b0000;
+  color:#fceccc;
+  padding:18px 12px;
   text-align:center;
-  margin-top:40px;
+  margin-top:28px;
   font-size:0.95rem;
 }
 
 /* Form */
 form.card{display:block}
-form label{
-  display:block;
-  margin-top
+form label{display:block;margin-top:10px;font-weight:600;color:#4a2b2b}
+form input, form textarea{
+  width:100%;
+  padding:10px 12px;
+  margin-top:8px;
+  border:1px solid #f0dede;
+  border-radius:8px;
+  font-size:1rem;
+  background:#fff;
+}
+form button{border:none}
+
+/* Responsive */
+@media (max-width:640px){
+  .header h1{font-size:1.3rem}
+  .container{padding:0 12px}
+}
