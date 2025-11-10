@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header"><h1>Sermons</h1></header>
+  <header class="header">
+    <h1>Our Sermons</h1>
+  </header>
 
   <nav class="nav">
     <a href="index.html">Home</a>
@@ -19,40 +21,36 @@
 
   <main class="container">
     <h2 class="section-title">Latest Sermons</h2>
-
-    <div id="sermons-list" class="grid-3"></div>
-    <div class="card">
-  <h3>Walk by Faith</h3>
-  <p>Hebrew 11 — Pastor Robert Perkins</p>
-  <a href="sermons/walk-by-faith.pdf" class="btn" target="_blank">Read Sermon (PDF)</a>
-</div>
-
+    <div id="sermons"></div>
   </main>
 
   <footer class="footer">© 2025 GCWF</footer>
 
   <script>
-    // Load sermons from JSON
-    fetch('content/sermons.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('sermons-list');
-        data.forEach(sermon => {
-          const card = document.createElement('div');
-          card.className = 'card';
+    async function loadJSON(file, targetId) {
+      try {
+        const res = await fetch(file);
+        const data = await res.json();
+        const container = document.getElementById(targetId);
+        container.innerHTML = "";
+
+        data.forEach(item => {
+          const card = document.createElement("div");
+          card.classList.add("card");
           card.innerHTML = `
-            <h3>${sermon.title}</h3>
-            <p>${sermon.scripture} — ${sermon.speaker}</p>
-            <a href="${sermon.pdf}" class="btn" target="_blank">Read Sermon (PDF)</a>
+            <h3>${item.title}</h3>
+            <p><strong>Speaker:</strong> ${item.speaker}</p>
+            <p><strong>Date:</strong> ${item.date}</p>
+            <small>${item.description}</small>
           `;
           container.appendChild(card);
         });
-      })
-      .catch(err => {
-        console.error('Error loading sermons:', err);
-        document.getElementById('sermons-list').innerHTML = 
-          '<p>Unable to load sermons. Please check back later.</p>';
-      });
+      } catch (err) {
+        console.error("Error loading sermons:", err);
+      }
+    }
+
+    loadJSON("content/sermons.json", "sermons");
   </script>
 </body>
 </html>
