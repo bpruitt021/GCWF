@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sermons — GCWF</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <h1>Our Sermons</h1>
-    <p>Faith comes by hearing the Word of God.</p>
-  </header>
+  <header class="header"><h1>Sermons</h1></header>
 
-  <!-- Navigation -->
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="sermons.html" class="active">Sermons</a>
@@ -22,41 +17,26 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Main Content -->
   <main class="container">
-    <h2 class="section-title">Latest Sermons</h2>
-    <div id="sermons"></div>
+    <h2 class="section-title">Recent Sermons</h2>
+
+    <div class="card">
+      <h3>Walk by Faith</h3>
+      <p>Faith follows God even when the path is not visible.</p>
+      <a href="sermons/walk-by-faith.pdf" class="btn" target="_blank">Read Sermon (PDF)</a>
+    </div>
+
+    <div class="card">
+      <h3>Living with Grace</h3>
+      <p>Grace transforms how we live, love, and forgive.</p>
+      <a href="sermons/living-with-grace.pdf" class="btn" target="_blank">Read Sermon (PDF)</a>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">© 2025 God’s Cloud of Witnesses Fellowship</footer>
-
-  <!-- JSON Loader -->
-  <script>
-    async function loadJSON(file, targetId) {
-      try {
-        const res = await fetch(file);
-        const data = await res.json();
-        const container = document.getElementById(targetId);
-        container.innerHTML = "";
-
-        data.forEach(item => {
-          const card = document.createElement("div");
-          card.classList.add("card");
-          card.innerHTML = `
-            <h3>${item.title}</h3>
-            <p><strong>Speaker:</strong> ${item.speaker}</p>
-            <p><strong>Date:</strong> ${item.date}</p>
-            <small>${item.description}</small>
-          `;
-          container.appendChild(card);
-        });
-      } catch (err) {
-        console.error("Error loading sermons:", err);
-      }
-    }
-
-    loadJSON("content/sermons.json", "sermons");
-  </script>
+  <footer class="footer">
+    © 2025 God’s Cloud of Witnesses Fellowship<br>
+    38301 Martin Luther King Blvd, Dade City, FL 33525<br>
+    Email: <a href="mailto:godscowfellowship@gmail.com">godscowfellowship@gmail.com</a>
+  </footer>
 </body>
 </html>
