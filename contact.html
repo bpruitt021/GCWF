@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header"><h1>Contact</h1></header>
+  <header class="header"><h1>Contact Us</h1></header>
+
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="sermons.html">Sermons</a>
@@ -19,30 +20,31 @@
   <main class="container">
     <h2 class="section-title">Get in Touch</h2>
 
-   <form name="contact" method="POST" data-netlify="true" action="/success" class="card">
-  <input type="hidden" name="form-name" value="contact">
+    <form name="contact" method="POST" data-netlify="true" action="/thankyou.html" class="card">
+      <input type="hidden" name="form-name" value="contact">
+      <label for="name">Your Name</label>
+      <input id="name" name="name" type="text" required>
 
-  <label for="name">Your Name</label>
-  <input id="name" name="name" type="text" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
 
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="6" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
 
-  <button class="btn" type="submit">Send Message</button>
-</form>
-
-    <div style="margin-top:18px" class="card">
+    <div class="card">
       <h3>Church Info</h3>
       <p><strong>God’s Cloud of Witnesses Fellowship</strong><br>
       38301 Martin Luther King Blvd, Dade City, FL 33525 Room 29<br>
-        Phone: 352-806-3624<br>
+      Phone: 352-806-3624
       Email: <a href="mailto:godscowfellowship@gmail.com">godscowfellowship@gmail.com</a></p>
     </div>
   </main>
 
-  <footer class="footer">© 2025 GCWF</footer>
+  <footer class="footer">
+    © 2025 God’s Cloud of Witnesses Fellowship
+  </footer>
 </body>
 </html>
