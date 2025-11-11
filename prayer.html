@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayer Requests — GCWF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Prayer Requests</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="sermons.html">Sermons</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Blog</a>
+    <a href="prayer.html" class="active">Prayer Requests</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h2 class="section-title">Submit a Prayer Request</h2>
+
+    <form name="prayer" method="POST" data-netlify="true" class="card">
+      <input type="hidden" name="form-name" value="prayer">
+
+      <label for="name">Your Name</label>
+      <input id="name" name="name" type="text" required>
+
+      <label for="email">Email (optional)</label>
+      <input id="email" name="email" type="email">
+
+      <label for="prayer">Prayer Request</label>
+      <textarea id="prayer" name="prayer" rows="6" required></textarea>
+
+      <button class="btn" type="submit">Submit Prayer</button>
+    </form>
+
+    <div style="margin-top:18px" class="card">
+      <h3>Church Info</h3>
+      <p><strong>God’s Cloud of Witnesses Fellowship</strong><br>
+      38301 Martin Luther King Blvd, Dade City, FL 33525 Room 29<br>
+      Sunday 12 PM–2 PM | Wednesday 7 PM–8 PM (meal provided)<br>
+      Email: <a href="mailto:godscowfellowship@gmail.com">godscowfellowship@gmail.com</a></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 God’s Cloud of Witnesses Fellowship
+  </footer>
+
+</body>
+</html>
