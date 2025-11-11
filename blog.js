@@ -15,7 +15,7 @@ async function loadBlog() {
         <p><strong>Author:</strong> ${post.author}</p>
         <p><strong>Date:</strong> ${post.date}</p>
         <p>${post.excerpt}</p>
-        <a href="blogs/${post.link}" class="btn">Read More</a> <!-- Updated path -->
+        <a href="blog/${post.link}" class="btn">Read More</a> <!-- Updated path -->
       `;
 
       container.appendChild(card);
