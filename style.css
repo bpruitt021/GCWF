@@ -65,6 +65,16 @@ body{
   font-size:1.2rem;
 }
 
+/* Bullets */
+ul, ol {
+  margin-left: 25px;   /* pushes the bullets in */
+  padding-left: 25px;  /* ensures consistent spacing */
+}
+
+li {
+  margin-bottom: 8px;  /* optional: adds space between bullets */
+}
+
 /* Card */
 .card{
   background:var(--bg);
