@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Building a Healthy Christian Relationship — GCWF</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header"><h1>Church Blog</h1></header>
+
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../sermons.html">Sermons</a>
+    <a href="../events.html">Events</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../prayer.html">Prayer Request</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+
+  <main class="container blog-post">
+    <h1>Building a Healthy Christian Relationship</h1>
+    <p><strong>Date:</strong> January 1, 2025</p>
+
+    <p>Relationships are a gift from God...</p>
+
+    <h2>1. Christ Must Be the Foundation</h2>
+    <p>“Except the Lord build the house, they labour in vain that build it.” —Psalm 127:1 (KJV)</p>
+    <p>A relationship cannot be stronger...</p>
+
+    <h2>2. Love Should Reflect God’s Character</h2>
+    <p>“Charity suffereth long...” —(1 Cor. 13:4–7 KJV)</p>
+
+    <h2>3. Healthy Boundaries Protect Purity</h2>
+    <p>“For this is the will of God...” —1 Thessalonians 4:3 (KJV)</p>
+
+    <h2>4. Communication Should Be Honest and Grace-Filled</h2>
+
+    <h2>5. Both People Should Help Each Other Grow</h2>
+    <p>“Iron sharpeneth iron…” —Proverbs 27:17 (KJV)</p>
+
+    <h3>Final Thought</h3>
+    <p>God did not design relationships...</p>
+
+    <a class="btn back-btn" href="../blog.html">← Back to Blog</a>
+  </main>
+
+  <footer class="footer">
+    © 2025 God’s Cloud of Witnesses Fellowship • Dade City, FL
+  </footer>
+</body>
+</html>
